@@ -29,23 +29,12 @@ public class UpdateData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUpdateDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setContentView(R.layout.activity_update_data);
+//        setContentView(R.layout.activity_update_data);
 
 
-        delete =findViewById(R.id.deleteBtn);
+//        delete =findViewById(R.id.deleteBtn);
 //        logout =findViewById(R)
 
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent intent =new Intent(UpdateData.this, DeleteData.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         binding.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +50,19 @@ public class UpdateData extends AppCompatActivity {
 //                String lastName = binding.lastname.getText().toString();
 //                String age = binding.age.getText().toString();
 
-
                 updateData(userName, dateOfBirth, email, gender, occupation, userNumber);
 
             }
         });
+//        delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent =new Intent(UpdateData.this, DeleteData.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
 
 
@@ -76,10 +73,10 @@ public class UpdateData extends AppCompatActivity {
         HashMap User = new HashMap();
         User.put(("userNumber"),userNumber);
         User.put(("userName"),userName);
-        User.put("dateOfBirth",dateOfBirth);
-        User.put("email",email);
-        User.put("gender",gender);
-        User.put("occupation",occupation);
+        User.put("Dateofbirth",dateOfBirth);
+        User.put("Email",email);
+        User.put("Gender",gender);
+        User.put("Occupation",occupation);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         databaseReference.child(userNumber).updateChildren(User).addOnCompleteListener(new OnCompleteListener() {
@@ -97,7 +94,7 @@ public class UpdateData extends AppCompatActivity {
                     binding.occupation.setText("");
 
 
-                    Toast.makeText(UpdateData.this,"Successfuly Updated",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateData.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
 
                 }else {
 
