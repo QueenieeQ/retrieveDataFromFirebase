@@ -42,7 +42,7 @@
             android:background="@drawable/input"
             android:textColor="@color/teal_700"
             android:textColorHint="@color/teal_200"
-            android:hint="UserName"
+            android:hint="Input userPhone"
             android:paddingLeft="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

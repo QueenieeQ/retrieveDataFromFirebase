@@ -53,7 +53,7 @@ public class DeleteData extends AppCompatActivity {
 
                 if (task.isSuccessful()){
 
-                    Toast.makeText(DeleteData.this,"Successfuly Deleted",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteData.this,"Successfully Deleted",Toast.LENGTH_SHORT).show();
                     binding.etusername.setText("");
 
 
